@@ -1,0 +1,4 @@
+*.env
+Vector_Store
+__pycache__
+.ipynb_checkpoints
