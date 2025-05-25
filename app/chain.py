@@ -13,7 +13,7 @@ class Chain:
     def __init__(self):
         self.llm = ChatGroq(
                     temperature = 0,
-                    api_key = "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",
+                    api_key = KEY,
                     model = "llama-3.3-70b-versatile"
                 )
         

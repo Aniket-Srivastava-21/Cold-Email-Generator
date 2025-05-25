@@ -6,7 +6,8 @@ from langchain_community.document_loaders import WebBaseLoader
 
 PORTFOLIO_FILE_PATH = "app/resources/my_portfolio.csv"
 
-def generate_email(portfolio_file_path):
+def generate_email(new_chain, portfolio):
+    st.set_page_config(page_title="Cold Email Generator", page_icon=":email:", layout="centered")
     st.title("Cold Email Generator")
 
     url_input = st.text_input("Enter URL:", value="For Example: https://example.com/job-14693/")
@@ -14,20 +15,23 @@ def generate_email(portfolio_file_path):
     submit_button = st.button("Submit")
 
     if submit_button:
-        # loader = WebBaseLoader('https://www.google.com/about/careers/applications/jobs/results/126881918376387270-cloud-engineer-ai?q=%22Data%20Scientist%22&location=Bengaluru%2C%20India&target_level=EARLY')
         loader = WebBaseLoader(url_input)
         page_data = loader.load().pop().page_content
         cleaned_text = clean_text(page_data)
-        new_chain = Chain()
         requirements = new_chain.extract_requirements(cleaned_text)
-        portfolio = Portfolio(portfolio_file_path)
-        portfolio.load_portfolio()
-        print(requirements)
+        st.write("Extracted Requirements:")
+        st.json(requirements)
         links = portfolio.query_links(requirements['skills'])
+        st.write("Relevant Links:")
+        st.json(links)
         response = new_chain.write_email(requirements, links)
         email = response.content
+        st.write("Generated Email:")
 
-        st.code(email, language="Markdown")
+        st.text_area(" ", email, height=500, key="email_output")
 
 if __name__ == "__main__":
-    generate_email(PORTFOLIO_FILE_PATH)
+    new_chain = Chain()
+    portfolio = Portfolio(PORTFOLIO_FILE_PATH)
+    portfolio.load_portfolio()
+    generate_email(new_chain, portfolio)
