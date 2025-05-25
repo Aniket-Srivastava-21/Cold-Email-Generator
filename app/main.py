@@ -18,17 +18,18 @@ def generate_email(new_chain, portfolio):
         loader = WebBaseLoader(url_input)
         page_data = loader.load().pop().page_content
         cleaned_text = clean_text(page_data)
-        requirements = new_chain.extract_requirements(cleaned_text)
-        st.write("Extracted Requirements:")
-        st.json(requirements)
-        links = portfolio.query_links(requirements['skills'])
-        st.write("Relevant Links:")
-        st.json(links)
-        response = new_chain.write_email(requirements, links)
-        email = response.content
-        st.write("Generated Email:")
+        jobs = new_chain.extract_requirements(cleaned_text)
 
-        st.text_area(" ", email, height=500, key="email_output")
+        for job in jobs["job_postings"]:
+            st.write("Extracted Requirements:")
+            st.json(job)
+            links = portfolio.query_links(job['skills'])
+            st.write("Relevant Links:")
+            st.json(links)
+            response = new_chain.write_email(job, links)
+            email = response.content
+            st.write("Generated Email:")
+            st.text_area(" ", email, height=500, key="email_output")
 
 if __name__ == "__main__":
     new_chain = Chain()
