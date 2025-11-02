@@ -60,7 +60,7 @@ Given a **job posting URL**, the app:
 
 ```bash
 # Clone this repository
-git clone https://github.com/<your-username>/cold-email-generator.git
+git clone https://github.com/Aniket-Srivastava-21/Cold-Email-Generator.git
 cd cold-email-generator
 
 # Create and activate virtual environment
