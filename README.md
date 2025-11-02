@@ -69,3 +69,18 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
+```
+
+## 🚀 Run the App
+```bash
+streamlit run app.py
+```
+
+After successful run, you should see something like this:
+
+<img width="1913" height="646" alt="image" src="https://github.com/user-attachments/assets/bb581a24-7964-4e94-96e2-c5e0a8c51cc8" />
+
+
+After you paste an url and hit submit, the processing starts and the generated email looks like this:
+
+<img width="1904" height="960" alt="Screenshot 2025-11-02 150159" src="https://github.com/user-attachments/assets/0995db4e-21ed-4b4a-8de4-c775baa728c5" />
