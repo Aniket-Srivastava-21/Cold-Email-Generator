@@ -83,4 +83,5 @@ After successful run, you should see something like this:
 
 After you paste an url and hit submit, the processing starts and the generated email looks like this:
 
-<img width="1904" height="960" alt="Screenshot 2025-11-02 150159" src="https://github.com/user-attachments/assets/0995db4e-21ed-4b4a-8de4-c775baa728c5" />
+<img width="1915" height="926" alt="image" src="https://github.com/user-attachments/assets/f13a0dad-8a95-4461-8e43-b4889b06a655" />
+
