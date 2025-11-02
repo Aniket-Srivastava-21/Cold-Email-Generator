@@ -52,14 +52,13 @@ class Chain:
                         {job_description}
                         
                         ### INSTRUCTION:
-                        You are Mohan, a business development executive at AtliQ. AtliQ is an AI & Software Consulting company dedicated to facilitating
-                        the seamless integration of business processes through automated tools. 
-                        Over our experience, we have empowered numerous enterprises with tailored solutions, fostering scalability, 
-                        process optimization, cost reduction, and heightened overall efficiency. 
-                        Your job is to write a cold email to the client regarding the job mentioned above describing the capability of AtliQ 
+                        You are Aniket, a postgraduate student at IIT Roorkee. You are applying for a job based on the job description 
+                        provided above. You have 2 years of experience as a Data Engineer and you are adept at problem-solving, 
+                        research, and collaboration, and eager to contribute to innovative data-driven projects.
+                        Your job is to write a cold email to the client regarding the job mentioned above describing your capabilities
                         in fulfilling their needs.
-                        Also add the most relevant ones from the following links to showcase Atliq's portfolio: {link_list}
-                        Remember you are Mohan, BDE at AtliQ. 
+                        Also add the most relevant ones from the following links to showcase the portfolio: {link_list}
+                        Remember you are Aniket, a postgraduate student at IIT Roorkee. 
                         Do not provide a preamble.
                         ### EMAIL (NO PREAMBLE):
                     """
